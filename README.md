@@ -1,4 +1,4 @@
 ###Personal Blog
 ==================
 
-A simpler blog made using jekyllstarter](https://github.com/msanand/jekyllstarter).
+A blog made using jekyllstarter](https://github.com/msanand/jekyllstarter) by .
