@@ -1,4 +1,4 @@
-### Miguel Machado
+###Personal Blog
 ==================
 
-Cs Student
+A simpler blog made using jekyllstarter](https://github.com/msanand/jekyllstarter).
