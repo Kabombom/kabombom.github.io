@@ -116,7 +116,7 @@
         <div class="container" style="text-align:center">
           <h3 class="masthead-title">
             <a href="/" title="Home">Miguel Machado</a>
-            <small>Cs Student</small>
+            <small>Ce Student</small>
           </h3>
         </div>
       </div>
@@ -131,7 +131,7 @@
 <div class="post">
   <h1 class="post-title">Matrix Multiplication</h1>
   <div>
-    <span class="post-date" style="float: left;">08 Aug 2015</span>
+    <span class="post-date" style="float: left;">18 Aug 2015</span>
   </div>
   <div style="clear: both;"></div>​
 
@@ -214,10 +214,11 @@ The first part we have to see if the multiplication is valid:</p>
 </code></pre></div>
 <p>To understand better by example: 2 matrices both with the size [2][2] we need to multiply [0][0] with [0][0], then [0][1] with [1][0]. After this [1][0] with [0][1] and finnaly [1][1] with [1][1].<br>
 The counter that travels through the numbers that are in each row of matrice1 is counterc1, this counter also travels through the numbers in each column of the matrice2.<br>
-The first part of multiplication (row 0 with column 0) it&rsquo;s donne in the second while where the result is stored in the var sum.<br>
-After this while is donne, the cycle of the first while continues and it appends the sum onto multMatrice.<br>
-Then it resets sum and counterc1, counterc2 (controls the column travel in matrice2) is incremented.
-When counterc2 is equal to the number of columns in matrice2, it&rsquo;s reseted and counterl1 (controls the row travel in matrice1) is incremented.</p>
+The first part of multiplication (row 0 with column 0) it&rsquo;s donne in the while inside the while where the result is stored in the var sum.<br>
+After the while is donne, the first while continues and it appends the sum onto multMatrice.<br>
+Then it resets sum and counterc1. Counterc2 (controls the column travel in matrice2) is incremented.
+When counterc2 is equal to the number of columns in matrice2, it&rsquo;s reseted and counterl1 (controls the row travel in matrice1) is incremented.
+This was my base idea for rectangular matrice multiplication, hope I was explicit enough for you to understand.</p>
 
 
 </div>
