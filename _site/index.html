@@ -127,6 +127,113 @@
 
   <ul class="tags">
     
+      <li><a href="/tags.html#Java" class="tag">Java</a></li>
+    
+  </ul>
+
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/posts/second-post/">
+        Matrix Multiplication
+      </a>
+    </h1>
+
+    <div>
+      <span class="post-date" style="float: left;">08 Aug 2015</span>
+      <span class="post-date" data-post-url="/posts/second-post/" style="float: right;"></span>
+    </div>
+    <div style="clear: both;"></div>​
+
+    <h3 id="create-a-program-that-multiplies-2-rectangular-matrices-this-program-needs-to-verify-if-the-multiplication-is-valid">Create a program that multiplies 2 rectangular matrices. This program needs to verify if the multiplication is valid.</h3>
+
+<p>Some notes first:<br>
+-&gt;Won&rsquo;t explain any Algebra in this post, search for yourself the rules of matrix multiplication;<br>
+-&gt;With that said, I don&rsquo;t have Algebra in some months, so had to search google myself for this;<br>
+-&gt;Yes, I&rsquo;m a noob;<br>
+-&gt;Started learning Java from a python and C background;
+-&gt;Lazyness during vacations made this problem look harder to me;<br>
+-&gt;Yes, I tend to be lazy during the summer vacations. Who isn&rsquo;t?</p>
+
+<p>Onwards to the interesting part!<br>
+The method itself is quite big so I will not post the code in one go. I will add parts of code and explain them basically.<br>
+The first part we have to see if the multiplication is valid:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">matrice1</span><span class="o">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">matrice2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">nLin1</span> <span class="o">=</span> <span class="n">matrice1</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nCol1</span> <span class="o">=</span> <span class="n">matrice1</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nLin2</span> <span class="o">=</span> <span class="n">matrice2</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nCol2</span> <span class="o">=</span> <span class="n">matrice2</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">nCol1</span> <span class="o">!=</span> <span class="n">nLin2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Multiplication is invalid&quot;</span><span class="o">);</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>The names of the variables are pretty self explanatory, nLin is the number of rows and nCol the number of columns. 1 and 2 being matrice1 or matrice2 respectavelly.</p>
+
+<p>Next, we&rsquo;re going to create the multiplication matrice and the counters that will allow to travel through both matrices:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">matrice1</span><span class="o">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">matrice2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">nLin1</span> <span class="o">=</span> <span class="n">matrice1</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nCol1</span> <span class="o">=</span> <span class="n">matrice1</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nLin2</span> <span class="o">=</span> <span class="n">matrice2</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nCol2</span> <span class="o">=</span> <span class="n">matrice2</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">nCol1</span> <span class="o">!=</span> <span class="n">nLin2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Multiplication is invalid&quot;</span><span class="o">);</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">multMatrice</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">nLin1</span><span class="o">][</span><span class="n">nCol2</span><span class="o">];</span>
+    <span class="kt">int</span> <span class="n">counterl1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">counterc1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">counterc2</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>In the while loops you&rsquo;ll understand the purpose of each var.</p>
+
+<p>Onto the multiplication itself:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">matrice1</span><span class="o">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">matrice2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">nLin1</span> <span class="o">=</span> <span class="n">matrice1</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nCol1</span> <span class="o">=</span> <span class="n">matrice1</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nLin2</span> <span class="o">=</span> <span class="n">matrice2</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">nCol2</span> <span class="o">=</span> <span class="n">matrice2</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">nCol1</span> <span class="o">!=</span> <span class="n">nLin2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Multiplication is invalid&quot;</span><span class="o">);</span>
+        <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">multMatrice</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">nLin1</span><span class="o">][</span><span class="n">nCol2</span><span class="o">];</span>
+    <span class="kt">int</span> <span class="n">counterl1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">counterc1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">counterc2</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">counterl1</span> <span class="o">&lt;</span> <span class="n">nLin1</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">counterc1</span> <span class="o">&lt;</span> <span class="n">nCol1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">matrice1</span><span class="o">[</span><span class="n">counterl1</span><span class="o">][</span><span class="n">counterc1</span><span class="o">]</span> <span class="o">*</span> <span class="n">matrice2</span><span class="o">[</span><span class="n">counterc1</span><span class="o">]</span> <span class="o">[</span><span class="n">counterc2</span><span class="o">];</span>
+            <span class="n">counterc1</span><span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="n">multMatrice</span><span class="o">[</span><span class="n">counterl1</span><span class="o">][</span><span class="n">counterc2</span><span class="o">]</span> <span class="o">=</span> <span class="n">sum</span><span class="o">;</span>
+        <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="n">counterc1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="n">counterc2</span><span class="o">++;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">counterc2</span> <span class="o">==</span> <span class="n">nCol2</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">counterc2</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="n">counterl1</span><span class="o">++;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">multMatriz</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>To understand better by example: 2 matrices both with the size [2][2] we need to multiply [0][0] with [0][0], then [0][1] with [1][0]. After this [1][0] with [0][1] and finnaly [1][1] with [1][1].<br>
+The counter that travels through the numbers that are in each row of matrice1 is counterc1, this counter also travels through the numbers in each column of the matrice2.<br>
+The first part of multiplication (row 0 with column 0) it&rsquo;s donne in the second while where the result is stored in the var sum.<br>
+After this while is donne, the cycle of the first while continues and it appends the sum onto multMatrice.<br>
+Then it resets sum and counterc1, counterc2 (controls the column travel in matrice2) is incremented.
+When counterc2 is equal to the number of columns in matrice2, it&rsquo;s reseted and counterl1 (controls the row travel in matrice1) is incremented.</p>
+
+
+  </div>
+  
+
+  <ul class="tags">
+    
       <li><a href="/tags.html#C" class="tag">C</a></li>
     
   </ul>
