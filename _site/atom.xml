@@ -4,13 +4,39 @@
     <title>Miguel Machado</title>
     <link href="kabombom.github.io/atom.xml" rel="self"/>
     <link href="kabombom.github.io/"/>
-    <updated>2015-08-18T00:51:56+01:00</updated>
+    <updated>2015-10-06T03:21:42+01:00</updated>
     <id>kabombom.github.io</id>
     <author>
         <name>Miguel Machado</name>
         <email></email>
     </author>
     
+    
+    <entry>
+        <title>One-Punch Man</title>
+        <link href="kabombom.github.io/posts/third-post/"/>
+        <updated>2015-08-20T00:00:00+01:00</updated>
+        <id>kabombom.github.io/posts/third-post</id>
+        <content type="html">
+            &lt;h3 id=&quot;one-punch-man&quot;&gt;One-Punch Man&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/One-PunchMan.png&quot; alt=&quot;&amp;quot;Hero for fun&amp;quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The start of this fall season in anime brought a new anime that I hope won´t be a flop like many have been before it. If you by some remote chance did not see the title and image I&amp;rsquo;m talking about One-Punch Man.                      This anime seems like a breath of fresh air in what the current trend of anime has been, although it&amp;rsquo;s hard to say seeing only one episode.
+One-Punch Man is about &amp;ldquo;a hero for fun&amp;rdquo; who faces the challenge of never finding a opponent that matches him in strength, making him able to defeat anyone  with only one punch (hence the title, not that hard to perceive that).
+At first I found the plot rather odd to say the least, in curiosity I decided to check this anime out and was gladly suprised with the comic/ironic ambient that for me made this anime stand out. The anime also provides a fairly good amount of action, despite the description given.
+A big plus in One-Punch Man was the animation and drawing during the action scenes which were able to make me more hooked to the screen.
+I think One-Punch Man can please a lot of long time anime fans but can fall short if managed wrong like most of the anime currently are just for the sake of bringing more money to the studio or trying to create the next big anime hit.&lt;/p&gt;
+
+            
+            &lt;br&gt;
+            
+            &lt;a href="kabombom.github.io/posts/third-post/"&gt;
+            Read entire post...
+            &lt;/a&gt;
+            
+        </content>
+    </entry>
     
     <entry>
         <title>Matrix Multiplication</title>
@@ -24,7 +50,7 @@
 -&amp;gt;Won&amp;rsquo;t explain any Algebra in this post, search for yourself the rules of matrix multiplication;&lt;br&gt;
 -&amp;gt;With that said, I don&amp;rsquo;t have Algebra in some months, so had to search google myself for this;&lt;br&gt;
 -&amp;gt;Yes, I&amp;rsquo;m a noob;&lt;br&gt;
--&amp;gt;Started learning Java from a python and C background;
+-&amp;gt;Started learning Java from a python and C background;&lt;br&gt;
 -&amp;gt;Lazyness during vacations made this problem look harder to me;&lt;br&gt;
 -&amp;gt;Yes, I tend to be lazy during the summer vacations. Who isn&amp;rsquo;t?&lt;/p&gt;
 

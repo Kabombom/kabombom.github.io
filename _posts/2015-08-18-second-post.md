@@ -8,7 +8,7 @@ Some notes first:
 ->Won't explain any Algebra in this post, search for yourself the rules of matrix multiplication;                                                                                                    
 ->With that said, I don't have Algebra in some months, so had to search google myself for this;       
 ->Yes, I'm a noob;     
-->Started learning Java from a python and C background;
+->Started learning Java from a python and C background;       
 ->Lazyness during vacations made this problem look harder to me;     
 ->Yes, I tend to be lazy during the summer vacations. Who isn't?
               
