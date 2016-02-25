@@ -4,18 +4,18 @@ title: Matrix Multiplication
 tags: Java
 ---
 ###Create a program that multiplies 2 rectangular matrices. This program needs to verify if the multiplication is valid.
-Some notes first:                             
-->Won't explain any Algebra in this post, search for yourself the rules of matrix multiplication;                                                                                                    
-->With that said, I don't have Algebra in some months, so had to search google myself for this;       
-->Yes, I'm a noob;     
-->Started learning Java from a python and C background;       
-->Lazyness during vacations made this problem look harder to me;     
+Some notes first:
+->Won't explain any Algebra in this post, search for yourself the rules of matrix multiplication;
+->With that said, I don't have Algebra in some months, so had to search google myself for this;
+->Yes, I'm a noob;
+->Started learning Java from a python and C background;
+->Lazyness during vacations made this problem look harder to me;
 ->Yes, I tend to be lazy during the summer vacations. Who isn't?
               
 
-Onwards to the interesting part!    
-The method itself is quite big so I will not post the code in one go. I will add parts of code and explain them basically.   
-The first part we have to see if the multiplication is valid:
+Onwards to the interesting part!
+The method itself is quite big so I will not post the code in one go. I will add parts of code and explain them.   
+The first consists of checking if the multiplication is valid:
 
 ```java
 public static void multiply(int[][] matrice1, int[][] matrice2) {
@@ -30,7 +30,7 @@ public static void multiply(int[][] matrice1, int[][] matrice2) {
 }
 ```
 
-The names of the variables are pretty self explanatory, nLin is the number of rows and nCol the number of columns. 1 and 2 being matrice1 or matrice2 respectavelly.
+The names of the variables are pretty self explanatory, nLin is the number of rows and nCol the number of columns. 1 and 2 being matrice1 or matrice2 respectively.
 
 
 Next, we're going to create the multiplication matrice and the counters that will allow to travel through both matrices:
