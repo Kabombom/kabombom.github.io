@@ -1,5 +1,4 @@
 ###Personal Blog
 ==================
 
-A blog made using jekyllstarter --> https://github.com/msanand/jekyllstarter.
-Running at http://kabombom.github.io
+Full rework on the make for this website
